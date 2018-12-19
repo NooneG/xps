@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>飞利浦分销项目测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { word-wrap:break-word;word-break:break-all;overflow:auto;}
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+    font-size: 16pt;
+    color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: 00;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 600px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }        }        if (id.substr(0,2) == 'st') {           if (level > 1) {               tr.className = '';            }           else {               tr.className = 'hiddenRow';           }
+        }
+    }
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+         if (!tr) {
+            tid = 's' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&');
+    s = s.replace(/</g,'<');
+    s = s.replace(/>/g,'>');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>飞利浦分销项目测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2018-12-18 10:09:54</p>
+<p class='attribute'><strong>Duration:</strong> 0:13:13.590554</p>
+<p class='attribute'><strong>Status:</strong> Error 6</p>
+
+<p class='description'>测试用例执行情况</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>Skip</td>
+    <td>View</td>
+    <td>Screenshot</td>
+</tr>
+
+<tr class='errorClass'>
+    <td>PurchaseFlow</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_success_procurement</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Start
+screenshot: 2018-12-18-10-10-16 .png
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 82, in test_success_procurement
+    purchase_order_number)
+UnboundLocalError: local variable 'purchase_order_number' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 134, in test_success_procurement
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f90eda0 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a    href="./screenshot/2018-12-18-10-10-16.png">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_same_product_exchange</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Start
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 248, in test_same_product_exchange
+    "#outgoing-notice &gt; div.fx-theme-table &gt; div &gt; div.el-table__body-wrapper.is-scrolling-none &gt; table &gt; tbody"))
+  File "E:\xps_automation\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 310, in test_same_product_exchange
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f97f5c0 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_foreign_exchange</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
+
+    <div id='div_ft1.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.3: Start
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 445, in test_foreign_exchange
+    "#outgoing-notice &gt; div.fx-theme-table &gt; div &gt; div.el-table__body-wrapper.is-scrolling-none &gt; table &gt; tbody"))
+  File "E:\xps_automation\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\purchase_flow.py", line 506, in test_foreign_exchange
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f93f160 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr class='errorClass'>
+    <td>SalesFlow</td>
+    <td>3</td>
+    <td>0</td>
+    <td>0</td>
+    <td>3</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',3)">Detail</a></td>
+    <td> </td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_successful_sales</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: Start
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"","returnCode":0}
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:Successful table_row_list
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result1 &lt;Response [200]&gt;
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:id 38430,purchaseNo 5603877224
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"","returnCode":0}
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:Successful table_row_list
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result1 &lt;Response [200]&gt;
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:id 38422,purchaseNo 1195897172
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"","returnCode":0}
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 31, in test_successful_sales
+    "#order-management &gt; div.sales-management-table &gt; div &gt; div.el-table__body-wrapper.is-scrolling-none &gt; table &gt; tbody"))
+  File "E:\xps_automation\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 137, in test_successful_sales
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f99a710 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_main_item_sales_return</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        error</a>
+
+    <div id='div_ft2.2' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Start
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 152, in test_main_item_sales_return
+    "div.el-table__body-wrapper.is-scrolling-none &gt; table &gt; tbody"))
+  File "E:\xps_automation\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 269, in test_main_item_sales_return
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f90eb00 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='ft2.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_spare_parts_return</div></td>
+    <td colspan='6' align='center'>
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        error</a>
+
+    <div id='div_ft2.3' class="popup_window" >
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Start
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result1 &lt;Response [200]&gt;
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:retrunNo 1023746132,id 24224,jdSkuCode 5823429
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"NO ERROR","returnCode":0}
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result1 &lt;Response [200]&gt;
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:retrunNo 1023746132,id 24224,jdSkuCode 5823429
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"NO ERROR","returnCode":0}
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result1 &lt;Response [200]&gt;
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:retrunNo 1023746132,id 24224,jdSkuCode 5823429
+INFO:philips_jd.testcase.configuration_and_common_modules.configuration:get_result {"data":null,"message":"NO ERROR","returnCode":0}
+End
+Traceback (most recent call last):
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 279, in test_spare_parts_return
+    self.edi_spare_parts_return()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 181, in edi_spare_parts_return
+    '//*[@id="after-sales-management"]/div[1]/form/div[1]/div[2]/div/div/input'))
+  File "E:\xps_automation\venv\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 361, in call
+    result = fn(*args, **kwargs)
+  File "E:\xps_automation\philips_jd\testcase\bizflow\sales_flow.py", line 375, in test_spare_parts_return
+    self.img()
+  File "E:\xps_automation\philips_jd\testcase\configuration_and_common_modules\common_modules.py", line 42, in img
+    os.makedirs(path)
+  File "C:\Users\guantianzhu\AppData\Local\Programs\Python\Python37\lib\os.py", line 221, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\xps_automation\\philips_jd\\testcase\\report\\2018-12-18\\screenshot'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 292, in wrapped_f
+    return self.call(f, *args, **kw)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 358, in call
+    do = self.iter(retry_state=retry_state)
+  File "E:\xps_automation\venv\lib\site-packages\tenacity\__init__.py", line 332, in iter
+    six.raise_from(retry_exc, fut.exception())
+  File "&lt;string&gt;", line 3, in raise_from
+tenacity.RetryError: RetryError[&lt;Future at 0x1d12f9d77f0 state=finished raised FileExistsError&gt;]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+    </td>
+    <td align='center'>
+    <a  hidden="hidden"  href="">picture_shot</a>
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>6</td>
+    <td>0</td>
+    <td>0</td>
+    <td>6</td>
+    <td>0</td>
+    <td> </td>
+    <td> <a href="" target="_blank"></a></td>
+
+</tr>
+</table>
+
+<div id='ending'> </div>
+
+</body>
+</html>
